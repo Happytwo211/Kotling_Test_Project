@@ -1,0 +1,41 @@
+{% extends "default.html" %}
+
+{%block title%}
+    Кото-Лидеры
+{%endblock%}
+
+{%block body%}
+    <style>
+            table {
+                margin: 0 auto; /* центровка */
+                border: 1px solid black; /* рамка вокруг таблицы */
+            }
+    </style>
+    <table style="text">
+        <tbody>
+            <tr>
+                <td>Имя</td>
+                <td>Продолжительнсоть</td>
+                <td>Счет</td>
+            </tr>
+            </tbody>
+    </table>
+
+        {% if users %}
+            <table>
+            {% for u in users %}
+                <tr>
+                    <td>{{u.name}}</td>
+                    <td>{{u.game_last}}</td>
+                    <td>{{u.score}}</td>
+                </tr>
+
+            {% endfor %}
+            </table>
+
+
+        {% else %}
+        <h1>Пусто!</h1>
+        {% endif %}
+
+{%endblock%}
